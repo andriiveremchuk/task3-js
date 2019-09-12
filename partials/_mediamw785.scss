@@ -1,0 +1,54 @@
+@media screen and (max-width: 785px) {
+    * {
+        font-size: 12px;
+    }
+
+    .content {
+        height: auto;
+
+        &--black {
+            height: auto;
+            margin-bottom: 0;
+        }
+
+        &__wrapper {
+            padding-top: 25px;
+        }
+
+        &__container {
+            flex-direction: column;
+
+            &__block {
+                margin-top: 40px;
+            }
+
+            &--black {
+                margin-top: 50px;
+            }
+
+            &__article {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    .footer {
+        height: 650px;
+
+        &__content {
+            @include flexbox(column, space-around, flex-start);
+
+            &__info {
+                width: 50%;
+            }
+
+            &__description {
+                width: auto;
+            }
+
+            &__block {
+                width: 100%;
+            }
+        }
+    }
+}

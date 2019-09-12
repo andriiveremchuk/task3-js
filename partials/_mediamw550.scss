@@ -1,0 +1,65 @@
+@media screen and (max-width: 550px) {
+    * {
+        font-size: 10px;
+    }
+
+    .info {
+        flex-direction: column;
+
+        &--small {
+            margin: 0 auto;
+            height: auto;
+            padding: 30px 0;
+
+            &__wrapper {
+                width: auto;
+            }
+
+            &__article,
+            &__laptop {
+                display: none;
+            }
+        }
+
+        &__wrapper {
+            width: 100%;
+        }
+
+        &__content {
+
+            &__title,
+            &__textone {
+                max-width: auto;
+            }
+        }
+
+        &__article {
+            display: none;
+        }
+    }
+
+    .content__article {
+            flex-wrap: wrap;
+        }
+
+    .article {
+        &__form {
+            @include flexbox(column, center, center);
+            width: 100%;
+
+            &__input {
+                width: 85%;
+                margin-bottom: 20px;
+            }
+
+            &__wrapper {
+                width: auto;
+                padding: 15px 0;
+            }
+
+            &__button {
+                width: 85%;
+            }
+        }
+    }
+}

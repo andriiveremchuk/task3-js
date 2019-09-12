@@ -1,0 +1,490 @@
+@import './partials/mixins', './partials/variables';
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Exo', sans-serif;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+.banner {
+	@include flexbox;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+
+	&__video {
+		position: absolute;
+		z-index: -1;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+	}
+
+	&__info {
+		@include flexbox;
+		flex-direction: column;
+		margin-bottom: 40px;
+
+		&__title {
+			@include font(3.3rem, 100, 4.2rem, 0.09rem);
+			margin-top: 40px;
+			max-width: 630px;
+			text-align: center;
+		}
+
+		&__round-button {
+			margin-top: 40px;
+			width: 49px;
+			height: 49px;
+			opacity: 0.5;
+			background-color: transparent;
+			border: none;
+
+			&__image {
+				width: 49px;
+				height: 49px;
+			}
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+
+
+
+		&__button {
+			@include font(0.87rem, 400, 2.81rem, 0.175rem);
+			margin-top: 20px;
+			width: 169px;
+			background-color: $secondary-color;
+			text-align: center;
+			text-transform: uppercase;
+			color: $main-color;
+		}
+
+		&__button:hover {
+			@include button-hover;
+		}
+
+		&__reference {
+			@include font(0.75rem, 400, 2.81rem, 0.03rem);
+			color: $text_main-color;
+		}
+	}
+}
+
+.info {
+	display: flex;
+
+	&--small {
+		position: relative;
+		height: 65vh;
+		width: 100%;
+
+		&__article {
+			display: flex;
+			height: 100%;
+			width: 42%;
+
+			&__background-red {
+				height: 100%;
+				width: 15%;
+				background-color: $secondary-color;
+			}
+
+			&__background-mix {
+				height: 100%;
+				width: 85%;
+				background: linear-gradient(to bottom left, $main-color 50%, $secondary-color 50%);
+			}
+		}
+
+		&__wrapper {
+			@include flexbox(row, space-between, center);
+			margin: 0 auto;
+			width: 58%;
+			max-width: 85%;
+			background-color: $main-color;
+		}
+
+		&__laptop {
+			position: absolute;
+			top: 50%;
+			left: 3%;
+			transform: translateY(-50%);
+			max-width: 45%;
+			height: auto;
+		}
+	}
+
+	&__wrapper {
+		@include flexbox;
+		width: 60%;
+		height: 90vh;
+	}
+
+	&__content {
+		@include flexbox(column, center, stretch);
+		margin: 0 auto;
+		max-width: 67%;
+
+		&__name {
+			@include font(0.87rem, 500, 2.75rem, 0.175rem);
+			text-transform: uppercase;
+			color: $secondary-color;
+		}
+
+		&__title {
+			@include font(2.06rem, 500, 2.75rem, 0.09rem);
+			margin-bottom: 25px;
+			max-width: 94%;
+
+			&--small {
+				max-width: 76%;
+			}
+
+			&__dots {
+				@include font(2rem, 400, 1.56rem, 0.22rem);
+				letter-spacing: 3.5px;
+				color: $secondary-color;
+			}
+		}
+
+		&__textone {
+			@include font(0.87rem, 500, 1.44rem, 0.03rem);
+			margin-bottom: 15px;
+
+			&--small {
+				max-width: 85%;
+			}
+		}
+
+		&__texttwo {
+			@include font(0.87rem, 500, 1.44rem, 0.03rem);
+
+			&--small {
+				max-width: 60%;
+				text-align: center;
+			}
+		}
+	}
+
+	&__article {
+		width: 40%;
+
+		&__space {
+			height: 30%;
+			background-color: $article-secondary-color;
+		}
+
+		&__figure {
+			height: 70%;
+			background: linear-gradient(to right bottom, $article-secondary-color 50%, $secondary-color 50%);
+		}
+	}
+}
+
+.content {
+	@include flexbox;
+	position: relative;
+	height: 85vh;
+	background: url('../img/background-middle.png') top center / cover no-repeat;
+
+
+
+	&--black {
+		@include flexbox(column, center, stretch);
+		height: 80vh;
+		background: url('../img/background_figures.png') center center / cover no-repeat;
+		background-color: $text_main-color;
+	}
+
+	&__penholder {
+		position: absolute;
+		top: 0;
+		left: 65px;
+	}
+
+	&__earphones {
+		position: absolute;
+		top: -10px;
+		right: 125px;
+	}
+
+	&__cup {
+		position: absolute;
+		bottom: 0;
+		right: 90px;
+	}
+
+	&__wrapper {
+		@include flexbox(column, flex-end, center);
+		margin: 0 auto;
+		max-width: 78%;
+
+		&--black {
+			align-items: stretch;
+		}
+	}
+
+	&__block {
+		text-align: center;
+
+		&--small {
+			@include flexbox(column, center, center);
+		}
+
+		&__name {
+			@include font(0.87rem, 500, 1.88rem, 0.175rem);
+			text-transform: uppercase;
+			color: $secondary-color;
+		}
+
+		&__title {
+			@include font(2.19rem, 500, 2.75rem, 0.09rem);
+			margin-bottom: 30px;
+
+			&--white {
+				color: $main-color;
+			}
+		}
+	}
+
+	&__container {
+		display: flex;
+		margin-top: 30px;
+		max-width: 90%;
+
+		&--black {
+			margin-top: 0;
+			margin-bottom: 100px;
+			max-width: 100%;
+		}
+
+		&__article {
+			margin-right: 20px;
+			text-align: center;
+
+			&__title {
+				@include font(1.19rem, 500, 2.75rem, 0.05rem);
+
+				&--black {
+					color: $main-color;
+				}
+			}
+
+			&__subtitle {
+				@include font(0.87rem, 500, 0.31rem, normal);
+				margin-bottom: 30px;
+				color: $secondary-color;
+			}
+
+			&__text {
+				@include font(0.87rem, 500, 1.44rem, 0.03rem);
+				opacity: 0.66;
+
+				&--black {
+					color: $main-color;
+					font-style: italic;
+				}
+			}
+		}
+	}
+
+	&__article {
+		@include flexbox(row, space-around, center);
+		max-width: 100%;
+		filter: hue-rotate(90deg) sepia(1) brightness(10);
+	}
+
+	&__image {
+		margin-top: 75px;
+		width: 73%;
+	}
+}
+
+.block {
+	padding-top: 92px;
+}
+
+.article {
+	padding: 65px 0;
+	background-color: $article-background-color;
+
+	&__wrapper {
+		@include flexbox(column, space-around, center);
+		position: relative;
+	}
+
+	&__form {
+		@include flexbox(row, space-around, flex-end);
+		width: 80%;
+		padding: 30px 0;
+
+		&__pointer {
+			@include flexbox (row, center, stretch);
+
+			&__text {
+				@include font(0.8rem, 400, 1.5rem, 0.03rem);
+				color: $main-color;
+			}
+
+			&__image {
+				width: 25%;
+			}
+		}
+
+		&__input {
+			border: 1px solid $main-color;
+			width: 22%;
+			height: 44px;
+			background-color: $input-background-color;
+
+			&::placeholder {
+				@include font(0.8rem, 400, 1.56rem, 0.03rem);
+				padding-left: 15px;
+				text-transform: uppercase;
+				color: $main-color;
+			}
+
+			&--white {
+				width: 78%;
+				background-color: $main-color;
+				color: $article-main-color;
+
+				&::placeholder {
+					color: $article-main-color;
+				}
+			}
+		}
+
+		&__wrapper {
+			@include flexbox(column, center, flex-end);
+			width: 22%;
+		}
+
+		&__button {
+			@include font(0.8rem, 400, 1.56rem, 0.03rem);
+			border: 1px solid $secondary-color;
+			width: 100%;
+			height: 44px;
+			background-color: $secondary-color;
+			text-transform: uppercase;
+			color: $main-color;
+		}
+
+		&__button:hover {
+			@include button-hover;
+		}
+	}
+
+	&__footer {
+		@include font(0.8rem, 400, 1.56rem, 0.04rem);
+		margin-top: 30px;
+		color: $main-color;
+
+		&__paragraph {
+			text-decoration: underline;
+		}
+	}
+}
+
+.footer {
+	height: 40vh;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: row;
+		height: 100%;
+	}
+
+	&__content {
+		@include flexbox(row, space-around, center);
+		margin: 0 auto;
+		padding-left: 50px;
+		width: 77%;
+		background-color: $article-secondary-color;
+
+		&__info {
+			width: 24%;
+
+			&__text {
+				@include font(0.75rem, 500, 1.25rem, 0.03rem);
+				opacity: 0.56;
+			}
+		}
+
+		&__description {
+			width: 14%;
+
+			&__title {
+				@include font(1.19rem, 500, 3.13rem, 0.04rem);
+				font-size: 1.19rem;
+				font-weight: 500;
+			}
+
+			&__text {
+				@include font(0.75rem, 500, 1.87rem, 0.02rem);
+				opacity: 0.56;
+			}
+		}
+
+		&__block {
+			width: 27%;
+			padding-top: 17px;
+
+			&__title {
+				@include font(1.19rem, 500, 1.25rem, 0.04rem);
+				margin-bottom: 15px;
+			}
+
+			&__submit {
+				@include flexbox(row, center, stretch);
+				margin-bottom: 30px;
+				width: 100%;
+
+				&__button {
+					width: 20%;
+					height: 44px;
+					background: url('../img/footer_button_icon.png') center center / contain no-repeat;
+					background-size: 23px;
+					background-color: $secondary-color;
+				}
+
+				&__button:hover {
+					@include button-hover;
+				}
+			}
+
+			&__images {
+				@include flexbox(row, space-around, stretch);
+				margin: 0 auto;
+				width: 60%;
+			}
+
+			&__images:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	&__article {
+		width: 23%;
+		background: linear-gradient(to right top, $article-secondary-color 50%, $secondary-color 50%);
+	}
+}
+
+.disabled {
+	cursor: not-allowed;
+	opacity: .07;
+}
+
+@import './partials/mediamw1024', './partials/mediamw785', './partials/mediamw550';
